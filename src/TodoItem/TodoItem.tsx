@@ -1,4 +1,4 @@
-import { Task } from "../App"
+import { Task } from "../App/App"
 import { FC } from "react"
 
 interface ITodoItemProps {
@@ -7,10 +7,13 @@ interface ITodoItemProps {
 }
 
 const TodoItem: FC <ITodoItemProps>=({ todo, onDelete })=> {
-    return (<li>
+    return (
+    <li>
         <p>{ todo.text}</p>
         <button onClick={()=>onDelete(todo.id)} type="button">Delete</button>
-    </li>)
+    </li>
+   
+            )
 }
 
 export default TodoItem;

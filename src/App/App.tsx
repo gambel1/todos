@@ -1,5 +1,5 @@
-import  AddTodo  from "./AddTodo/AddTodo";
-import  TodoItem  from "./TodoItem/TodoItem";
+import AddTodo from "../AddTodo/AddTodo";
+import  TodoItem  from "../TodoItem/TodoItem";
 import { useState } from "react";
 
 export interface Task {
@@ -21,13 +21,16 @@ export default function App() {
   }
 
   return (
-    <div className="App">
+    <section className="container">
+      <div className="app">
       <h1>Todo list</h1>
       <AddTodo onAdd={addTodos} />
-      <ul>
+      <ul className="appList">
         {todos.map((todo) => (<TodoItem key={todo.id} todo={ todo} onDelete={deleteTodo} />))}
       </ul>
-    </div>
+      </div>
+    </section>
+
   );
 }
 
